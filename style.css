@@ -1,58 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
-
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-}
-
 body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #dcdc39;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body, .nav, .menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #111111;
-    font-family: 'Roboto Condensed', sans-serif;
-    line-height: 1.5;
 }
 
-#Menu {
+.nav {
     position: relative;
-    border: none;
-    border-radius: 10em;
-    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    transition: 0.5s;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,.2);
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.nav input:checked ~ .menu {
+    width: 450px;
+}
+
+.menu li {
     list-style: none;
-    background: #111111;
-    box-shadow: 40px 40px 40px #000000;
-    border: 2px solid white;
-    padding: 10px;
+    margin: 0 10px;
 }
 
-#Menu li a {
-    position: relative;
-    padding: 0.6em 2 em;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    color: #fff;
-    display: inline-block;
+.menu li a {
     text-decoration: none;
-    z-index: 3;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.5s;
 }
 
-#Menu .liquid1 {
+.menu li a:hover {
+    color: #161919;
+}
+
+.nav input {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.nav span {
     position: absolute;
-    display: inline-block;
-    height: 3em;
-    border-radius: 10em;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
-    background: rgb(226, 15, 15);
-    z-index: 2;
+    left: 30px;
+    width: 30px;
+    height: 4px;
+    border-radius: 50px;
+    background-color: #666;
+    pointer-events: none;
+    transition: 0.5s;
 }
 
-#Menu .squeeze {
-    transform: scale(0.9);
+.nav input:checked ~ span {
+    background-color: #f974a1;
+}
+
+.nav span:nth-child(2) {
+    transform: translateY(-8px);
+}
+
+.nav input:checked ~ span:nth-child(2) {
+    transform: translateY(0) rotate(-45deg);
+}
+.nav span:nth-child(3) {
+    transform: translateY(8px);
+}
+
+.nav input:checked ~ span:nth-child(3) {
+    transform: translateY(0) rotate(45deg);
 }
