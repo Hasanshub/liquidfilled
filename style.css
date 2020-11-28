@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111111;
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.5;
+}
+
+#Menu {
+    position: relative;
+    border: none;
+    border-radius: 10em;
+    display: flex;
+    list-style: none;
+    background: #111111;
+    box-shadow: 40px 40px 40px #000000;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+#Menu li a {
+    position: relative;
+    padding: 0.6em 2 em;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    z-index: 3;
+}
+
+#Menu .liquid1 {
+    position: absolute;
+    display: inline-block;
+    height: 3em;
+    border-radius: 10em;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
+    background: rgb(226, 15, 15);
+    z-index: 2;
+}
+
+#Menu .squeeze {
+    transform: scale(0.9);
+}
